@@ -1,0 +1,12 @@
+show=drun
+allow_images=true
+hide_scroll=true
+lines=8
+width=40%
+line_wrap=word
+print_command=true
+layer=overlay
+insensitive=true
+prompt=Search...
+display_generic=true
+location=center

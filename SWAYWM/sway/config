@@ -1,0 +1,18 @@
+########################################
+#                                      #
+#  ███████╗██╗    ██╗ █████╗ ██╗   ██╗ #
+#  ██╔════╝██║    ██║██╔══██╗╚██╗ ██╔╝ #
+#  ███████╗██║ █╗ ██║███████║ ╚████╔╝  #
+#  ╚════██║██║███╗██║██╔══██║  ╚██╔╝   #
+#  ███████║╚███╔███╔╝██║  ██║   ██║    #
+#  ╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝    #
+#                                      #
+######## github.com/eduardlima #########                                     
+
+# user config directory
+include $HOME/.config/sway/core/*
+
+# only disable this if every app you use is compatible with wayland
+xwayland enable
+
+# Read `man 5 sway` for a complete reference.

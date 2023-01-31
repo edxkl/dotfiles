@@ -1,0 +1,43 @@
+##################
+### Appearance ###
+##################
+
+# Apply gtk theming
+exec_always ~/.config/sway/scripts/import-gsettings
+
+# Set wallpaper:
+#exec swaybg -i ~/.config/sway/wallpapers/bg-01.jpg
+output * bg ~/.config/sway/wallpapers/bg-01.jpg fill
+
+# Default Font 
+font pango:Iosevka Bold 9
+
+# Title align
+title_align center
+
+# Set Gaps
+gaps {
+  inner 6
+  outer 0
+}
+
+### Windows borders ###
+
+# hide titlebars on windows
+default_border pixel 3
+
+# hide titlebars on floating windows
+default_floating_border pixel 3
+
+# Default orientation
+default_orientation horizontal
+
+# Focus follow mouse
+focus_follows_mouse yes
+
+# Colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #404040 #404040 #ffffff #404040   #404040
+client.unfocused        #282828 #282828 #ffffff #282828   #282828
+client.focused_inactive #282828 #282828 #ffffff #282828   #282828
+

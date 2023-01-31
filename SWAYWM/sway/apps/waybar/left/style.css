@@ -1,0 +1,125 @@
+* { /* Reset all styles */
+	border: none;
+	border-radius: 0;
+	min-height: 0;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+	text-shadow: none;
+}
+
+#waybar {
+  background: #202020; 
+  color: #b5abab; 
+  font-family: "Iosevka";
+  font-size: 15px;
+}
+
+window#waybar {
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+window#waybar.hidden {opacity: 0.2;}
+
+window#waybar #workspaces button.persistent {color: #606060;}
+
+#workspaces.vertical {
+  background-color: #404040;
+  border-radius: 8px;
+  margin: 2px 4px;
+}
+
+#workspaces button {
+  padding: 0px 2px;
+  color:  #aaaaaa;
+  min-width: 0;
+}
+
+#workspaces button:hover { background: transparent; border-radius: 8px; }
+
+#workspaces button.focused {
+  color: #ea6962;
+  border-radius: 8px;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+  border-radius: 8px;
+}
+
+#window {
+  font-size: 10px;
+  padding: 4px;
+  margin: 4px;
+}
+
+#cpu, #temperature, #memory {
+  background: #333333;
+  padding: 0px 2px;
+  margin: 0px 4px;
+}
+#cpu {
+  border-radius: 8px 8px 0px 0px;
+  margin-top: 2px;
+}
+#memory {
+  border-radius: 0px 0px 8px 8px;
+  margin-bottom: 2px;
+}
+
+#pulseaudio, #network, #clock { 
+  background: #333333;
+  padding: 0px 2px;
+  margin: 0px 4px;
+}
+#pulseaudio {
+  border-radius: 8px 8px 0px 0px;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+#network {
+  padding-bottom: 4px;
+}
+#clock {
+  background: #454545;
+  border-radius: 8px;
+  font-weight: bold;
+  padding: 4px 2px;
+  margin: -5px 4px 4px 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {margin-left: 0;}
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {margin-right: 0;}
+
+#custom-launcher {
+  color: #aaaaaa;
+  margin: 4px;
+}
+
+#custom-power {
+  padding: 0px 2px;
+  margin: 4px 4px 8px 4px;
+  color: #e06b74;
+}
+
+#cpu.warning { color: #e78a4e; }
+#cpu.critical { color: #eb4d4b; }
+
+#memory.warning { color: #e78a4e; }
+#memory.critical { color: #eb4d4b; }
+
+#temperature.critical { color: #eb4d4b; }
+
+#network.disconnected { color: #e06b74; }
+
+#pulseaudio.muted { color: #e06b74; }
+
+#idle_inhibitor { padding: 4px; }
+#idle_inhibitor.activated { color: #94ebeb; }
+
+#tray { margin: 4px; }
+#tray > .passive { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }

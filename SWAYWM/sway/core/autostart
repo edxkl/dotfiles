@@ -1,0 +1,23 @@
+#################
+### Autostart ###
+#################
+
+# Polkit
+#exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+#exec "/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1"
+exec lxpolkit
+
+# Bar
+exec_always 'pkill waybar; waybar -c ~/.config/sway/apps/waybar/left/config -s ~/.config/sway/apps/waybar/left/style.css'
+
+# Desktop notifications
+exec_always dunst -config ~/.config/sway/apps/dunst/dunstrc
+
+# Autotiling (make sure that you have 'python3-i3ipc' installed)
+exec ~/.config/sway/scripts/autotiling.py
+
+# GTK3 applications take a long time to start
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+

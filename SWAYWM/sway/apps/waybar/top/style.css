@@ -1,0 +1,108 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: Iosevka Nerd Font, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: #202020; 
+  color: #b5abab;
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+window#waybar #workspaces button.persistent { color: #555555; }
+
+window#waybar.hidden { opacity: 0.2; }
+
+#workspaces.horizontal {
+  background-color: #404040;
+  border-radius: 6px;
+  margin: 4px 2px;
+}
+
+#workspaces button {
+  padding: 0px 4px;
+  color: #aaaaaa;
+  min-width: 0;
+}
+
+#workspaces button:hover { background: transparent; }
+
+#workspaces button.focused {
+  color: #ea6962;   
+  border-radius: 6px;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+  border-radius: 6px;
+}
+
+#cpu, #memory {
+  background: #404040;
+  padding: 0px 4px;
+  margin: 4px 0px;
+}
+
+#cpu {
+  border-radius: 6px 0px 0px 6px;
+  margin-left: 2px;
+}
+
+#memory {
+  border-radius: 0px 6px 6px 0px;
+  margin-right: 2px;
+}
+
+#clock, #pulseaudio {
+  background: #404040;
+  padding: 0px 4px;
+  margin: 4px 0px;
+}
+
+#pulseaudio {
+  border-radius: 6px 0px 0px 6px;
+  margin-left: 2px;
+}
+
+#clock {
+  border-radius: 0px 6px 6px 0px;
+  margin-right: 2px;
+}
+
+#window {
+  font-size: 11px;
+  margin: 4px 2px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces { margin-left: 0; }
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces { margin-right: 0; }
+
+#custom-power {
+  margin: 4px 2px;
+  color: #e06b74;
+}
+
+#custom-launcher {
+  font-weight: bold;
+  margin: 4px 2px;
+}
+
+#temperature.critical { color: #eb4d4b; }
+
+#network.disconnected { color: #e06b74; }
+
+#pulseaudio.muted { color: #e06b74; }
+
+#tray { margin: 4px; }
+#tray > .passive { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }
+
+#idle_inhibitor { margin: 2px; }
+#idle_inhibitor.activated { color: #94ebeb; }
