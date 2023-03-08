@@ -27,4 +27,3 @@ case $selected in
     exec systemctl poweroff -i
   ;;
 esac
-
