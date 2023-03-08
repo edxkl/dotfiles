@@ -19,7 +19,8 @@ local options = {
   clipboard = "unnamedplus", -- allows neovim to access the system clipboard
   splitbelow = true, -- force all horizontal splits to go bellow current window
   splitright = true, -- force all vertical splits to go to the right of current window
-  signcolumn = "yes" -- always show the sign column
+  signcolumn = "yes", -- always show the sign column
+  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
 }
 
 for k, v in pairs(options) do

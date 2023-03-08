@@ -35,5 +35,11 @@ keymap("n", "<leader>q", ":bdelete<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Increment/decrement numbers
-keymap("n", "<leader>+", "<C-a>", opts) -- increment
-keymap("n", "<leader>-", "<C-x>", opts) -- decrement
+-- keymap("n", "<leader>+", "<C-a>", opts) -- increment
+-- keymap("n", "<leader>-", "<C-x>", opts) -- decrement
+
+-- Use jk to exit insert mode
+-- keymap("i", "jk", "<ESC>", opts)
+
+-- Clear search highlights
+keymap("n", "<leader>ch", ":nohl<CR>", opts)
