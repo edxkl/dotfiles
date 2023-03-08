@@ -27,7 +27,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 # Focus with pointer
-bspc config focus_follows_pointer false
+bspc config focus_follows_pointer true
 
 # Cursor fix
 xsetroot -cursor_name left_ptr &
