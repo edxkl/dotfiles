@@ -75,6 +75,7 @@ local get_taglist = function(s)
     },
     buttons = taglist_buttons
   }
+
   return pac_taglist
 end
 

@@ -46,7 +46,7 @@ theme.font_name = "Iosevka Nerd Font "
 theme.font = theme.font_name .. "Medium 10"
 
 -- wallpaper
-theme.wallpaper = themes_path.."wallpapers/bg-01.jpg"
+theme.wallpaper = themes_path.."wallpapers/bg-02.png"
 
 -- bar size
 theme.bar_width = 27
@@ -94,6 +94,11 @@ theme.fg_urgent = theme.red
 theme.fg_minimize = theme.normal
 
 
+-- theme.taglist_bg_focus = theme.blue
+-- theme.taglist_fg_occupied = theme.blue
+-- theme.taglist_bg_empty = theme.greyLight
+
+
 theme.pacman = theme.yellow
 theme.ghost = theme.blue
 theme.dots = "#606060"
@@ -126,7 +131,7 @@ theme.awesome_icon = theme_assets.awesome_icon(
 )
 
 -- Disable tasklist icon
-theme.tasklist_disable_icon = false
+theme.tasklist_disable_icon = true
 
 -- Titlebar buttons
 theme.titlebar_close_button_normal              = themes_path.."icons/titlebar/close_normal.png"

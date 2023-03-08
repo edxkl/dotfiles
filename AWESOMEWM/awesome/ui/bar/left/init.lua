@@ -98,7 +98,7 @@ awful.screen.connect_for_each_screen(function(s)
 
   -- Powermenu
   local powermenu = wibox.widget {
-    image = beautiful.power_icon,
+    image = gears.color.recolor_image(beautiful.power_icon, beautiful.red),
     widget = wibox.widget.imagebox
   }
 
@@ -124,10 +124,11 @@ awful.screen.connect_for_each_screen(function(s)
       layout = wibox.layout.align.vertical,
 
       { -- Left widgets
+        layout = wibox.layout.fixed.vertical,
+        spacing = dpi(4),
         taglist,
         s.mylayoutbox,
         s.mypromptbox,
-        layout = wibox.layout.fixed.vertical,
       },
 
       { -- Middle widgets
@@ -135,10 +136,11 @@ awful.screen.connect_for_each_screen(function(s)
       },
 
       { -- Right widgets
+        layout = wibox.layout.fixed.vertical,
+        spacing = dpi(2),
         s.systray,
         clock,
         powermenu,
-        layout = wibox.layout.fixed.vertical,
       },
     },
     margins = dpi(4),

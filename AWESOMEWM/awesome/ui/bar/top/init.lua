@@ -12,7 +12,7 @@ local helpers = require("helpers")
 -- -- -- -- -- -- -- -- -- --
 
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+local mytextclock = wibox.widget.textclock()
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -50,6 +50,23 @@ awful.screen.connect_for_each_screen(function(s)
     screen  = s,
     filter  = awful.widget.taglist.filter.all,
     buttons = taglist_buttons,
+    style = { 
+      -- shape = helpers.rrect(beautiful.border_radius)
+      shape = gears.shape.rounded_rect 
+    },
+    layout = { spacing = dpi(10), layout = wibox.layout.fixed.horizontal },
+    widget_template = {
+      {
+        {
+          id = "text_role",
+          widget = wibox.widget.textbox,
+        },
+        margins = dpi(4),
+        widget = wibox.container.margin,
+      },
+      id = "background_role",
+      widget = wibox.container.background
+    },
   }
 
   -- Create a tasklist widget
@@ -57,6 +74,22 @@ awful.screen.connect_for_each_screen(function(s)
     screen  = s,
     filter  = awful.widget.tasklist.filter.focused,
   }
+
+  -- -- -- -- -- -- -- -- -- --
+
+  -- Powermenu
+  local powermenu = wibox.widget {
+    image = gears.color.recolor_image(beautiful.power_icon, beautiful.red),
+    widget = wibox.widget.imagebox
+  }
+
+  powermenu:buttons(gears.table.join(
+    awful.button({}, 1, function()
+      awful.spawn.with_shell("~/.config/awesome/scripts/powermenu.sh &")
+    end)
+  ))
+
+  -- -- -- -- -- -- -- -- -- --
 
   -- Create the wibox
   s.mywibox = awful.wibar({
@@ -67,24 +100,32 @@ awful.screen.connect_for_each_screen(function(s)
 
   -- Add widgets to the wibox
   s.mywibox:setup {
-    expand = "none",
-    layout = wibox.layout.align.horizontal,
-    { -- Left widgets
-      layout = wibox.layout.fixed.horizontal,
-      s.mytaglist,
-      s.mypromptbox,
-    },
+    {
+      expand = "none",
+      layout = wibox.layout.align.horizontal,
 
-    { -- Middle widgets
-      layout = wibox.layout.fixed.horizontal,
-      s.mytasklist,
-    },
+      { -- Left widgets
+        layout = wibox.layout.fixed.horizontal,
+        spacing = dpi(4),
+        s.mytaglist,
+        s.mylayoutbox,
+        s.mypromptbox,
+      },
 
-    { -- Right widgets
-      layout = wibox.layout.fixed.horizontal,
-      wibox.widget.systray(),
-      mytextclock,
-      s.mylayoutbox,
+      { -- Middle widgets
+        layout = wibox.layout.fixed.horizontal,
+        s.mytasklist,
+      },
+
+      { -- Right widgets
+        layout = wibox.layout.fixed.horizontal,
+        spacing = dpi(4),
+        wibox.widget.systray(),
+        mytextclock,
+        powermenu,
+      },
     },
+    margins = dpi(3),
+    widget = wibox.container.margin
   }
 end)
