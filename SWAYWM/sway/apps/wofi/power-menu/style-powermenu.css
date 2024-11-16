@@ -1,10 +1,8 @@
 #window {
-  font-family: Iosevka Nerd Font;
+  font-family: Hack Nerd Font;
   font-size: 12px;
-  background: #404040;
+  background: #303030;
   border-radius: 6px;
-  border: 0px solid #454545;
-  margin: 0px 5px 0px 5px;
 }
 
 #text {

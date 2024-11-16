@@ -10,24 +10,24 @@ exec_always ~/.config/sway/scripts/import-gsettings
 output * bg ~/.config/sway/wallpapers/bg-01.jpg fill
 
 # Default Font 
-font pango:Iosevka Bold 9
+font pango:Hack Bold 9
 
 # Title align
 title_align center
 
 # Set Gaps
 gaps {
-  inner 6
+  inner 4
   outer 0
 }
 
 ### Windows borders ###
 
 # hide titlebars on windows
-default_border pixel 3
+default_border pixel 2
 
 # hide titlebars on floating windows
-default_floating_border pixel 3
+default_floating_border pixel 2
 
 # Default orientation
 default_orientation horizontal
@@ -37,7 +37,6 @@ focus_follows_mouse yes
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #404040 #404040 #ffffff #404040   #404040
+client.focused          #606060 #606060 #ffffff #606060   #606060
 client.unfocused        #282828 #282828 #ffffff #282828   #282828
 client.focused_inactive #282828 #282828 #ffffff #282828   #282828
-
