@@ -15,14 +15,15 @@ local helpers = {}
 
 -- -- -- -- -- -- -- -- -- --
 
--- Launcher
-helpers.launch_rofi = "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/apps/rofi/launcher.rasi"
-
 -- Create rounded rectangle shape (in one line)
 helpers.rrect = function(radius)
-  return function(cr, width, height)
-    gears.shape.rounded_rect(cr, width, height, radius)
-  end
+    return function(cr, width, height)
+        gears.shape.rounded_rect(cr, width, height, radius)
+    end
 end
+
+-- launch rofi
+helpers.launch_rofi = "rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/awesome/core/misc/rofi/launcher.rasi"
+
 
 return helpers

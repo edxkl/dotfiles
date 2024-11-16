@@ -13,11 +13,10 @@ local gears = require("gears") -- Standard awesome library
 local beautiful = require("beautiful") -- Theme handling library
 
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_configuration_dir() .. "theme/init.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "core/theme/init.lua")
 
 -- Loading configs
 require("core")
-require("ui")
 
 -- Default apps ----------------------------------
 terminal   = "alacritty"

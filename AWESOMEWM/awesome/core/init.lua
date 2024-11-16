@@ -1,5 +1,5 @@
 -- Init ------------------------------------------
--- Initialize configs
+-- Initialize core
 --
 
 require("core.autostart")
@@ -10,4 +10,6 @@ require("core.signals")
 require("core.layouts")
 require("core.rules")
 require("core.error")
+require("core.notifications")
 require("core.tags")
+require("core.ui")
