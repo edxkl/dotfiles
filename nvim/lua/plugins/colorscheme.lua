@@ -58,13 +58,13 @@ return {
           overlay1  = "#7F849C", -- Conceal color
           overlay0  = "#505050", -- Fold color
 
-          surface2  = "#6c6c6c", -- Default comment
-          surface1  = "#505050", -- Darker comment
-          surface0  = "#434343", -- Darkest comment
+          surface2  = "#4d4d4d", -- Default comment
+          surface1  = "#404040", -- Darker comment
+          surface0  = "#292929", -- Darkest comment
 
           -- Colors
           red       = "#ea6962", -- Error #
-          green     =	"#89b482", -- Diff add #
+          green     = "#89b482", -- Diff add #
           yellow    = "#d8a657", -- Warning #
           blue      = "#7daea3", -- Diff changed
 
@@ -72,7 +72,7 @@ return {
           flamingo  = "#F2CDCD", -- Target word
           pink      = "#F5C2E7", -- Just pink
           mauve     = "#CBA6F7", -- Tag
-          maroon    =	"#EBA0AC", -- Lighter red
+          maroon    = "#EBA0AC", -- Lighter red
           peach     = "#FAB387", -- Number
           teal      = "#94E2D5", -- Hint
           sky       = "#89DCEB", -- Operator
@@ -80,12 +80,17 @@ return {
           lavender  = "#B4BEFE", -- CursorLine Nr
         },
       },
-      highlight_overrides = {
-        mocha = function(cl)
-          return { }
-        end,
-      }
+      -- highlight_overrides = {
+      --   mocha = function(cl)
+      --     return {
+      --       AlphaHeader  = { fg = C.text },
+      --       AlphaButtons = { fg = C.text },
+      --       AlphaFooter  = { fg = C.surface2, style = {} },
+      --     }
+      --   end,
+      -- }
     }
+
     vim.cmd.colorscheme "catppuccin"
   end
 }

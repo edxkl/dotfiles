@@ -10,7 +10,7 @@ return {
         position = "center",
         text = txt,
         shortcut = sc,
-        cursor = 5,
+        cursor = 0,
         width = 36,
         align_shortcut = "right",
         hl = "AlphaButtons",
@@ -34,17 +34,18 @@ return {
     local default = {}
 
     default.logo = {
-      [[   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          ]],
-      [[    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       ]],
-      [[          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     ]],
-      [[           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    ]],
-      [[          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   ]],
-      [[   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  ]],
-      [[  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   ]],
-      [[ ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  ]],
-      [[ ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ ]],
-      [[      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     ]],
-      [[       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ]],
+      [[                                                     ]],
+      [[  ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓ ]],
+      [[  ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒ ]],
+      [[ ▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░ ]],
+      [[ ▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██  ]],
+      [[ ▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒ ]],
+      [[ ░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░ ]],
+      [[ ░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░ ]],
+      [[    ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░    ]],
+      [[          ░    ░  ░    ░ ░        ░   ░         ░    ]],
+      [[                                 ░                   ]],
+      [[                                                     ]],
     }
     default.header = {
       type = "text",
@@ -58,11 +59,11 @@ return {
     default.buttons = {
       type = "group",
       val = {
-        button("e", "  New file",      ":ene <BAR> startinsert <CR>"),
-        button("f", "  File Explorer", ":NvimTreeToggle <CR>"),
-        button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
-        button("p", "  Plugins",       ":Lazy <CR>"),
-        button("q", "  Quit",          ":qa<CR>"),
+        button("e", "  " .. "󰝒  New file",      ":ene <BAR> startinsert <CR>"),
+        button("f", "  " .. "󱧶  File Explorer", ":NvimTreeToggle <CR>"),
+        button("c", "  " .. "󰒓  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
+        button("p", "  " .. "󰐱  Plugins",       ":Lazy <CR>"),
+        button("q", "  " .. "󰗽  Quit",          ":qa<CR>"),
       },
       opts = {
         spacing = 1,
@@ -71,7 +72,7 @@ return {
 
     local function footer()
       local lazy = require("lazy")
-      local total_plugins = " " .. lazy.stats().count .. " Plugins"
+      local total_plugins = "󰂖 " .. lazy.stats().count .. " Plugins loaded"
 
       return total_plugins
     end
@@ -80,13 +81,22 @@ return {
       val = footer(),
       opts = {
         position = "center",
-        hl = "Number"
+        hl = "AlphaFooter"
       }
     }
-    
+
+    default.nvim_version = {
+      type = "text",
+      val = "NVIM v" .. vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch,
+      opts = {
+        position = "center",
+        hl = "AlphaFooter"
+      }
+    }
+
     local fn = vim.fn
-	  local marginTopPercent = 0.3
-	  local headerPadding = fn.max({2, fn.floor(fn.winheight(0) * marginTopPercent) })
+    local marginTopPercent = 0.25
+    local headerPadding = fn.max({2, fn.floor(fn.winheight(0) * marginTopPercent) })
 
     alpha.setup {
       layout = {
@@ -94,7 +104,8 @@ return {
         default.header,
         { type = "padding", val = 2 },
         default.buttons,
-        default.footer
+        default.footer,
+        default.nvim_version
       },
       opts = {},
     }

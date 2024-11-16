@@ -1,5 +1,4 @@
 return {
-  -- Hexcolors
   "NvChad/nvim-colorizer.lua",
   event = { "BufReadPost", "BufNewFile" },
   config = function()

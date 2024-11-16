@@ -13,7 +13,9 @@ return {
         "bash",
         "c",
         "cpp",
-        "rust"
+        "rust",
+        "markdown",
+        "markdown_inline"
       },
       -- Install languages synchronously (only applied to `ensure_installed`)
       sync_install = false,

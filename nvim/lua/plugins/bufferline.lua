@@ -1,23 +1,31 @@
 return {
-  -- Buffers
   "akinsho/bufferline.nvim",
-  event = { "VimEnter" },
   config = function() 
     require('bufferline').setup {
       options = {
-        numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
-        indicator = { style = 'icon', icon = "▎" },
-        buffer_close_icon = "",
-        modified_icon = "",
-        close_icon = "",
+        -- numbers = ( "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string )
+        numbers = "none", 
+        indicator = {
+          style = "icon",
+          icon = "▎"
+        },
+        buffer_close_icon = "󱎘",
+        modified_icon = "",
+        close_icon = "󱎘",
         left_trunc_marker = "",
         right_trunc_marker = "",
-        max_name_length = 30,
-        max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
-        tab_size = 20,
+        max_name_length = 18,
+        max_prefix_length = 18, -- prefix used when a buffer is de-duplicated
+        tab_size = 25,
         diagnostics = false, -- | "nvim_lsp" | "coc",
         diagnostics_update_in_insert = false,
-        offsets = { { filetype = "NvimTree", text = "EXPLORER", text_align = "center" } },
+        offsets = {
+          {
+            filetype = "NvimTree",
+            text = "",
+            text_align = "center",
+          }
+        },
         show_buffer_icons = true,
         show_buffer_close_icons = true,
         show_close_icon = true,
